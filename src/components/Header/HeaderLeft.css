@@ -1,0 +1,16 @@
+.header__left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header-left__logo img {
+  width: 2rem;
+}
+
+.header-left__text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  opacity: 0.65;
+  margin-left: 5px;
+}

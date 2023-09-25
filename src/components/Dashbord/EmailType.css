@@ -1,0 +1,32 @@
+.dashbord-type {
+  display: flex;
+  min-width: 20rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(225, 207, 207, 0.5);
+  cursor: pointer;
+}
+
+.dashbord-type div {
+  padding: 12px 17px;
+  padding-right: 80px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.875rem;
+  max-width: 251px;
+  font-weight: 500;
+  
+}
+.dashbord-type div:hover {
+  background-color: whitesmoke;
+}
+.dashbord-type div svg {
+  font-size: medium;
+  color: gray;
+}
+
+.active-type,
+.active-type .MuiSvgIcon-root {
+  color: #0b57d0ca;
+  border-bottom: 3px solid #0b57d0;
+}

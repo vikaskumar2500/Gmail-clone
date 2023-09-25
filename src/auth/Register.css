@@ -1,0 +1,92 @@
+.register {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 20rem;
+  max-width: 25rem;
+  gap: 10px;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid rgba(129, 124, 124, 0.2);
+  padding: 48px 40px 36px;
+}
+
+.register h4 {
+  color: blueviolet;
+}
+.register h4,
+.register span {
+  width: 100%;
+  text-align: center;
+}
+.register span {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: blueviolet;
+}
+
+.register input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(100, 91, 91, 0.264);
+  outline: none;
+  font-size: 15px;
+  &::placeholder {
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+}
+
+.register-button {
+  width: 100%;
+  padding: 0;
+  padding: 5px 0;
+  outline: none;
+  border: none;
+  margin-top: 30px;
+}
+
+
+.register .pass-visible {
+  position: absolute;
+  top: 9.7rem;
+  right: 40px;
+}
+
+.register .confirm-pass-visible {
+  position: absolute;
+  top: 13rem;
+  right: 40px;
+}
+
+.register .pass-logo {
+  width: 20px;
+}
+
+.register .confirm-pass-logo {
+  width: 20px;
+}
+
+.register .login-popup {
+  display: flex;
+  margin: 0 auto;
+}
+
+.register .login-popup a {
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.register .error {
+  color: red;
+  font-size: 0.81rem;
+  margin-top: -10px;
+  text-align: center;
+  margin:-10px auto;
+  margin-bottom: 10px;
+}

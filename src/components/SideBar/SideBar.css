@@ -1,0 +1,31 @@
+.side-bar {
+  width: 220px;
+  margin-left: -20px;
+}
+
+.compose-btn {
+  padding: 10px 20px !important;
+  border-radius: 40px !important;
+  margin-top: 20px !important;
+  margin-left: 30px !important;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #c2e7ff !important;
+}
+
+
+.compose-btn:hover {
+  background-color: #fff;
+  box-shadow: 2px 2px 4px #0000007e;
+}
+
+.compose-btn:focus {
+  background-color: #ffffff;
+  outline: none !important;
+  border: none;
+
+}
+

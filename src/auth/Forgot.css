@@ -1,0 +1,48 @@
+.forgot {
+  position: relative;
+  width: 25rem;
+  background-color: white;
+  height: 11rem;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.forgot h5 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.forgot input {
+  width: 95%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(163, 156, 156, 0.344);
+  margin-left: 5%;
+  padding: 10px;
+  font-size: 0.9rem;
+  &::placeholder {
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+}
+
+.forgot button:last-child {
+  width: 10rem;
+  margin-left: 30%;
+}
+
+.forgot .forgot-button {
+  margin-top: 20px;
+}
+
+.forgot .MuiButtonBase-root {
+  position: absolute !important;
+  right: 1rem;
+  top: 5px;
+}
+
+.forgot svg {
+  font-size: medium;
+}
+

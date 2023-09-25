@@ -1,0 +1,47 @@
+.side-bar-tool {
+  display: flex;
+  margin-left: 0;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 0.875rem;
+  padding: 5px 0 !important;
+  padding-left: 25px !important;
+  cursor: pointer;
+  .count {
+    opacity: 0;
+  }
+  &:hover {
+    .count {
+      opacity: 1;
+    }
+  }
+}
+
+.side-bar-tool:hover {
+  background-color: rgb(207, 195, 218);
+}
+
+.side-bar-tool .MuiSvgIcon-root {
+  font-size: 1rem !important;
+}
+
+.side-bar-tool .title {
+  margin-left: 10px;
+}
+
+.side-bar-tool:hover {
+  opacity: 1 !important;
+}
+
+.tools {
+  text-decoration: none;
+  color: black;
+}
+
+.active .side-bar-tool {
+  background-color: rgb(88, 133, 182);
+  .count {
+    opacity: 1;
+  }
+}

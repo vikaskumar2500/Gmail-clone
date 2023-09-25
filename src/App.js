@@ -1,58 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useEffect } from "react";
+import Header from "./components/Header/Header";
+import SideBar from "./components/SideBar/SideBar";
+import "./App.css";
+import Auth from "./auth/Auth";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "./store/AuthReducer";
+import RouteProvider from "./RouteProvider";
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    dispatch(authActions.login(isLoggedIn));
+  }, [dispatch]);
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <React.Fragment>
+      {isLoggedIn && (
+        <>
+          <Header />
+          <div className="main">
+            <SideBar />
+            <RouteProvider />
+          </div>
+        </>
+      )}
+      {!isLoggedIn && <Auth />}
+    </React.Fragment>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,18 @@
+.dashbord {
+  background-color: #fff;
+  height: 90vh;
+  border-radius: 13px;
+  margin-top: 10px;
+  min-width: 15rem !important;
+}
+
+.dashbord-body {
+  overflow-y:scroll;
+  height: 81.5vh;
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+.dashbord-body::-webkit-scrollbar {
+  overflow: hidden;
+}
