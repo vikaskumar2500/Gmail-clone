@@ -6,18 +6,17 @@ import { auth } from "../Firebase";
 const EmailVerification = () => {
   const navigate = useNavigate();
 
-  useEffect(()=> {
-    const timeOutId = setTimeout(()=> {
-      if(auth?.currentUser.emailVerified) {
-        navigate('/login');
-      }
-      else window.location.reload();
-    }, 3e4);
+  useEffect(() => {
+    console.log(auth?.currentUser);
+    const timeOutId = setTimeout(() => {
+      if (auth?.currentUser.emailVerified) {
+        navigate("/dashbord/inbox");
+      } else window.location.reload();
+    }, 3e3);
 
     // cleanup function
-    return ()=> clearTimeout(timeOutId);
-  }, [navigate])
-
+    return () => clearTimeout(timeOutId);
+  }, [navigate]);
 
   return (
     <div className="email-verification">

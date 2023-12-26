@@ -1,13 +1,20 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import "./Login.css";
 import { IconButton } from "@mui/material";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { auth } from "../Firebase";
 import { useDispatch } from "react-redux";
 import { authActions } from "../store/AuthReducer";
+
+const actionCodeSettings = {
+  handleCodeInApp: true,
+};
 
 const Login = () => {
   const [hide, setHide] = useState(false);
@@ -37,7 +44,7 @@ const Login = () => {
         if (!verified) throw new Error("Please verify your email!");
 
         localStorage.setItem("isLoggedIn", true);
-        localStorage.setItem('userEmail', email);
+        localStorage.setItem("userEmail", email);
         dispatch(authActions.login(true));
         navigate("/dashbord/inbox");
 
@@ -45,11 +52,11 @@ const Login = () => {
         passwordInputRef.current.value = "";
       })
       .catch((error) => {
-        
         setError(error.message);
         setLoading(false);
       });
   };
+
   return (
     <form id="login" className="login" onSubmit={formSubmitHandler}>
       <h4>Login</h4>
@@ -77,7 +84,7 @@ const Login = () => {
         required
       />
 
-      <NavLink to="/forgot" className="forgot-button">
+      <NavLink to={"/forgot"} className="forgot-button">
         Forgot password?
       </NavLink>
       <Button type="submit" variant="primary" className="login-button">

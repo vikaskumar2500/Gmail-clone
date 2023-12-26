@@ -133,7 +133,9 @@ const EmailList = () => {
             {titleId === "inbox" && !mail.read && (
               <div className="read">🔵</div>
             )}
-            <span className="email__name">{mail?.from}</span>
+            <span className="email__name">
+              {titleId === "sent" ? mail?.to : mail?.from}
+            </span>
           </Col>
 
           <Col className="email-list__mid">
