@@ -10,13 +10,11 @@ import RouteProvider from "./RouteProvider";
 const App = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  
+
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     dispatch(authActions.login(isLoggedIn));
   }, [dispatch]);
-
-  
 
   return (
     <React.Fragment>
